@@ -2,14 +2,55 @@ package main
 
 import (
 	"math/rand"
+    "flag"
 	"time"
 	"fmt"
 	"os"
 )
 
+
+var VERSION string = "0.0.1"
+
+
+type Options struct {
+	Version bool
+	Choice  int
+}
+
+
 func main(){
-	Logo()
-	Game(Enter())
+	options := ParseArguments(os.Args[1:])
+
+	if options.Version {
+		fmt.Println("v" + VERSION)
+	} else {
+		Logo()
+
+		if options.Choice != 0 {
+			if options.Choice--; options.Choice > 0 && options.Choice < 3 {
+				Game(options.Choice - 1)
+			} else {
+				fmt.Println("[\033[31mERROR\033[0m] Choice > 0 && Choice < 3")
+			}
+		} else {
+			Game(Enter())
+		}
+	}
+}
+
+
+func ParseArguments(arguments []string) (Options) {
+	var defaultOptions Options
+	options := defaultOptions
+
+    fs := flag.NewFlagSet("main", flag.ExitOnError)
+
+    fs.BoolVar(&options.Version, "v", false, "Show version")
+    fs.IntVar(&options.Choice, "c", 0, "Select choice")
+
+    fs.Parse(arguments)
+
+    return options
 }
 
 
