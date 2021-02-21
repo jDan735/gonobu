@@ -116,11 +116,11 @@ func Enter() (user int){
 
 	if user < 0 {
 		fmt.Println("[\033[31mERROR\033[0m] user < 0")
-		fmt.Println("[\033[33mNOTE\033[0m]  user number from 1 until 3.")
+		fmt.Println("[\033[33mNOTE\033[0m]  Enter number from 1 until 3.")
 		os.Exit(0)
 	} else if user > 2 {
 		fmt.Println("[\033[31mERROR\033[0m] user < 2")
-		fmt.Println("[\033[33mNOTE\033[0m]  user number from 1 until 3.")
+		fmt.Println("[\033[33mNOTE\033[0m]  Enter number from 1 until 3.")
 		os.Exit(0)
 	}
 
