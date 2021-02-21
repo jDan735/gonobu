@@ -1,2 +1,2 @@
 # gonobu
-Kanobu realisation writted in go
+Kanobu realisation written in go
