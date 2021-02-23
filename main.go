@@ -63,6 +63,12 @@ func GetLocale(lang string) (locale Locale){
 	locale = Locale{}
 	yaml.Unmarshal(file, &locale)
 
+    objects = [3]string{
+    	locale.Objects.Rock,
+    	locale.Objects.Scissors,
+    	locale.Objects.Paper,
+    }
+
 	return
 }
 
@@ -157,12 +163,6 @@ func Logo(){
 
 
 func Enter() (user int){
-    objects = [3]string{
-    	locale.Objects.Rock,
-    	locale.Objects.Scissors,
-    	locale.Objects.Paper,
-    }
-
     for i := 0; i < 3; i++ {
     	fmt.Println(
     		strconv.Itoa(i + 1) + ".",
