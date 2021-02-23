@@ -1,0 +1,20 @@
+lang:
+    name: Русский
+    code: ru
+    cases: ["", и, а]
+
+game:
+    description: Канобу на Go
+
+results:
+    win: Победа
+    lose: Проигрыш
+    draw: Ничья
+
+objects:
+    rock: камень
+    scissors: ножницы
+    paper: бумага
+
+bot:
+    have: У бота был

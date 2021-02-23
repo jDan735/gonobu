@@ -1,0 +1,19 @@
+lang:
+    name: English
+    code: en
+
+game:
+    description: Kanobu written in go
+
+results:
+    win: Win
+    lose: Loss
+    draw: Draw
+
+objects:
+    rock: rock
+    scissors: scissors
+    paper: paper
+
+bot:
+    have: Bot have
